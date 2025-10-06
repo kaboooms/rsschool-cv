@@ -1,0 +1,1 @@
+[https://GITHUB-USERNAME.github.io/rsschool-cv/cv](https://kaboooms.github.io/rsschool-cv/cv)
