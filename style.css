@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+ul[class],
+ol[class] {
+    padding: 0;
+}
+body {
+    font-family: Roboto, sans-serif;
+    margin: 20px;
+    color: #333;
+}
+h1, h2 {
+    color: #2c3e50;
+}
+p, li{
+    max-width: 40vw;
+    line-height: 1.35;
+    word-spacing: 0.12em;
+}
+.container{
+    padding-block: clamp(2rem, 5vw, 4rem);
+    margin: auto;
+    width: fit-content;
+}
+.contact-info, .section, .skills-list {
+    margin-bottom: 20px;
+}
+.skills-list p{
+    margin-left: 20px;
+}
+.section{
+    margin-top: clamp(32px, 5vw, 64px);
+}
+.section-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+.experience {
+    margin-block: 10px;
+}
+.experience-title {
+    font-weight: bold;
+    margin-top: 20px;
+}
+.job-details {
+    margin-left: 20px;
+}
+ul {
+    margin: 5px 0;
+    padding-left: 20px;
+}
