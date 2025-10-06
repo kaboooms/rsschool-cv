@@ -1,1 +1,1 @@
-https://kaboooms.github.io/rsschool-cv/cv
+https://kaboooms.github.io/rsschool-cv
