@@ -20,10 +20,10 @@
     </div>
     <div class="navigation">
         <ul class="menu">
-            <li class="menu__item heading component"><a>ABOUT ME</a></li>
-            <li class="menu__item heading component"><a>PORTFOLIO</a></li>
-            <li class="menu__item heading component"><a>FAQ</a></li>
-            <li class="menu__item heading component"><a>CONTACT</a></li>
+            <li class="menu__item heading component"><a href="#about">ABOUT ME</a></li>
+            <li class="menu__item heading component"><a href="#portfolio">PORTFOLIO</a></li>
+            <li class="menu__item heading component"><a href="#faq">FAQ</a></li>
+            <li class="menu__item heading component"><a href="#contact">CONTACT</a></li>
         </ul>
         <div class="hamburger">
             <div class="hamburger__icon">
@@ -33,16 +33,16 @@
             </div>
             <div class="hamburger__menu">
                 <ul class="hamburger-menu">
-                    <li class="hamburger-menu__item heading component"><a href="index.html">ABOUT ME</a></li>
-                    <li class="hamburger-menu__item heading component"><a href="index.html">PORTFOLIO</a></li>
-                    <li class="hamburger-menu__item heading component"><a href="index.html">FAQ</a></li>
-                    <li class="hamburger-menu__item heading component"><a href="index.html">CONTACT</a></li>
+                    <li class="hamburger-menu__item heading component"><a href="#about">ABOUT ME</a></li>
+                    <li class="hamburger-menu__item heading component"><a href="#portfolio">PORTFOLIO</a></li>
+                    <li class="hamburger-menu__item heading component"><a href="#faq">FAQ</a></li>
+                    <li class="hamburger-menu__item heading component"><a href="#contact">CONTACT</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </header>
-<section class="hero">
+<section id="hero" class="hero">
     <div class="container decoration">
         <p class="small-text">Best Photographer by MAX</p>
         <hr class="decoration__line">
@@ -97,7 +97,7 @@
         </div>
     </div>
 </section>
-<section class="about container">
+<section id="about" class="about">
     <div class="container column about-content">
         <div class="">
             <img src="assets/img/about_me_photo.png" alt="Portfolio professional photo of beautiful women"/>
@@ -118,7 +118,7 @@
                 small piece of art. My goal is to create timeless images that tell your unique story.
             </p>
         </div>
-        <div class="">
+        <div class="about-content__preimage">
             <img src="assets/img/about_me_photo_picture.png" alt="Portfolio professional photo of beautiful women"/>
         </div>
     </div>
@@ -135,22 +135,32 @@
     </div>
 </section>
 
-<section class="portfolio">
+<section id="portfolio" class="portfolio">
     <div class="portfolio-container">
         <div class="portfolio-container__header">
             <h2 class="heading">MY PORTFOLIO</h2>
             <p class="">Every shoot is a story. Here you’ll find portraits, love stories, family sessions, and more.</p>
         </div>
-
         <div class="slider">
-            <div class="slider__item"></div>
+            <div class="slider__item"><img src="assets/img/portfolio_beautiful_sunshine.png" alt="Portfolio photo"/></div>
+            <div class="slider__item"><img src="assets/img/portfolio_beautiful_couple_lovers.png" alt="Portfolio photo"/></div>
+            <div class="slider__item"><img src="assets/img/portfolio_shooting_nature_mountains.png" alt="Portfolio photo"/></div>
+            <div class="slider__item"><img src="assets/img/portfolio_beautiful_couple_lovers_photo.png" alt="Portfolio photo"/></div>
+            <div class="slider__item"><img src="assets/img/portfolio_photo_girls_fashion_sepia.png" alt="Portfolio photo"/></div>
+            <div class="slider__item"><img src="assets/img/portfolio_beautiful_couple_lovers_wb.png" alt="Portfolio photo"/></div>
+            <div class="slider__item"><img src="assets/img/portfolio_beautiful_couple_wb.png" alt="Portfolio photo"/></div>
+            <div class="slider__item"><img src="assets/img/portfolio_photo_wedding_black_white.png" alt="Portfolio photo"/></div>
+            <div class="slider__item"><img src="assets/img/portfolio_shooting_couples_lovers_original.png" alt="Portfolio photo"/></div>
+            <div class="slider__item"><img src="assets/img/portfolio_photo_couples_wb_10.png" alt="Portfolio photo"/></div>
+            <div class="slider__item"><img src="assets/img/portfolio_shooting_couples_11.png" alt="Portfolio photo"/></div>
+            <div class="slider__item"><img src="assets/img/portfolio_shooting_couples_12.png" alt="Portfolio photo"/></div>
         </div>
     </div>
 
 
 </section>
 
-<section class="pricing">
+<section id="pricing" class="pricing">
     <div class="pricing-title">
         <h2 class="heading">PRICING</h2>
         <p class="">Choose the package that suits your story. All options are customizable to your needs.</p>
@@ -235,7 +245,7 @@
     </div>
 </section>
 
-<section class="faq container">
+<section id="faq" class="faq container">
     <div class="faq__item">
         <div class="faq-title">
             <h2 class="heading">FREQUENTLY ASKED QUESTIONS</h2>
@@ -334,7 +344,7 @@
     </div>
 </section>
 <footer>
-    <div class="contact">
+    <div id="contact" class="contact">
         <h3 class="heading">LIKE MY PORTFOLIO? SIGN UP FOR A SHOOT!</h3>
         <div class="contact-form">
             <label class="component placeholder">
