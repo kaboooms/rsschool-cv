@@ -231,7 +231,7 @@ header {
 .hamburger .icon {
     width: 60px;
     height: 60px;
-    fill: white;
+    /*fill: white;*/
 }
 
 .menu__item {
@@ -270,12 +270,13 @@ header {
 
 .logo {
     padding: 20px;
+    fill: var(--secondary-color);
 }
 
 .icon {
     width: 20px;
     height: 20px;
-    fill: var(--secondary-color);
+    /*fill: var(--secondary-color);*/
     vertical-align: middle;
     /*transition: fill 0.2s;*/
 }
@@ -284,7 +285,7 @@ header {
     width: 24px;
     height: 24px;
     vertical-align: middle;
-    fill: var(--primary-text-color);
+    /*fill: var(--primary-text-color);*/
 }
 
 .icon__big {
@@ -333,12 +334,21 @@ header {
     display: flex;
 }
 
+.scroll_down:hover p {
+    color: var(--secondary-color);
+}
+
+.scroll_down:hover > .scroll_down_img > svg {
+    fill: var(--secondary-color) !important;
+}
+
 .scroll_down {
     /*position: fixed;*/
     display: flex;
     justify-self: end;
     gap: 8px;
     cursor: pointer;
+
 }
 
 .plus::before {
@@ -783,6 +793,7 @@ input {
     max-width: 380px;
     padding: 12px;
     border: var(--primary-color) 1px solid;
+    outline: none;
 }
 
 input:hover {
@@ -814,6 +825,10 @@ input::placeholder {
     .hamburger {
         display: block;
         cursor: pointer;
+    }
+
+    .hamburger__icon{
+        fill: var(--primary-color-light);
     }
 
     .hamburger:hover .hamburger__menu,
