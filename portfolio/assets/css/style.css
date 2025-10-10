@@ -296,7 +296,7 @@ header {
     display: flex;
     gap: 20px;
     width: 100%;
-    height: calc(100vh - 60px)
+    min-height: calc(100vh - 60px)
 }
 
 .hero__content {
@@ -402,7 +402,7 @@ header {
 }
 
 .portfolio {
-    height: 100dvh;
+    min-height: 100dvh;
 }
 
 .portfolio-container {
@@ -881,6 +881,13 @@ input::placeholder {
         display: none;
     }
 
+    .portfolio{
+        min-height: fit-content;
+    }
+
+    .portfolio-container__header{
+        width: 50%;
+    }
     .pricing-container {
         flex-wrap: wrap;
     }
@@ -914,6 +921,10 @@ input::placeholder {
     h1.heading {
         font-size: 54px;
         line-height: 60px;
+    }
+
+    .portfolio-container__header{
+        width: 100%;
     }
 
     .pricing-container__item {
@@ -999,16 +1010,6 @@ input::placeholder {
     clear: both;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
 @media print,
 (-webkit-min-device-pixel-ratio: 1.25),
 (min-resolution: 1.25dppx),
@@ -1022,63 +1023,63 @@ input::placeholder {
    https://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 
-/*@media print {*/
-/*    *,*/
-/*    *::before,*/
-/*    *::after {*/
-/*        background: #fff !important;*/
-/*        color: #000 !important;*/
-/*        !* Black prints faster *!*/
-/*        box-shadow: none !important;*/
-/*        text-shadow: none !important;*/
-/*    }*/
+@media print {
+    *,
+    *::before,
+    *::after {
+        background: #fff !important;
+        color: #000 !important;
+        /* Black prints faster */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
 
-/*    a,*/
-/*    a:visited {*/
-/*        text-decoration: underline;*/
-/*    }*/
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
 
-/*    a[href]::after {*/
-/*        content: " (" attr(href) ")";*/
-/*    }*/
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
 
-/*    abbr[title]::after {*/
-/*        content: " (" attr(title) ")";*/
-/*    }*/
+    abbr[title]::after {
+        content: " (" attr(title) ")";
+    }
 
-/*    !**/
-/*     * Don't show links that are fragment identifiers,*/
-/*     * or use the `javascript:` pseudo protocol*/
-/*     *!*/
-/*    a[href^="#"]::after,*/
-/*    a[href^="javascript:"]::after {*/
-/*        content: "";*/
-/*    }*/
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after {
+        content: "";
+    }
 
-/*    pre {*/
-/*        white-space: pre-wrap !important;*/
-/*    }*/
+    pre {
+        white-space: pre-wrap !important;
+    }
 
-/*    pre,*/
-/*    blockquote {*/
-/*        border: 1px solid #999;*/
-/*        page-break-inside: avoid;*/
-/*    }*/
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
 
-/*    tr,*/
-/*    img {*/
-/*        page-break-inside: avoid;*/
-/*    }*/
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
 
-/*    p,*/
-/*    h2,*/
-/*    h3 {*/
-/*        orphans: 3;*/
-/*        widows: 3;*/
-/*    }*/
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
 
-/*    h2,*/
-/*    h3 {*/
-/*        page-break-after: avoid;*/
-/*    }*/
-/*}*/
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
