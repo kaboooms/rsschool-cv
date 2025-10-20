@@ -1,10 +1,10 @@
-"use strict"
+import {initBurgerHandler} from "./modules/burger.js";
+import {initAccordionHandler} from "./modules/accordion.js";
+import {initSliderHandler} from "./modules/slider.js";
 
-window.onload = function(){
+window.onload = function () {
     console.log("Loaded onload")
-    addTagClickHandlers()
-}
-
-const addTagClickHandlers =  () => {
-
+    initBurgerHandler()
+    initAccordionHandler()
+    initSliderHandler()
 }

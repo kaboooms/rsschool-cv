@@ -146,6 +146,9 @@ body {
     -ms-overflow-style: none;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
 
 /* ==========================================================================
    Author's custom styles
@@ -159,8 +162,8 @@ body {
 }
 
 h1.heading {
-    font-size: 116px;
-    line-height: 132px;
+    font-size: clamp(4.25rem, 0.8214rem + 7.1429vw, 7.25rem);
+    line-height: clamp(5rem, 1.2857rem + 7.7381vw, 8.25rem);
     font-weight: lighter;
 }
 
@@ -209,10 +212,28 @@ p {
 header {
     display: flex;
     flex-wrap: nowrap;
-
+    position: fixed;
+    z-index: 100;
     width: 100%;
     height: 60px;
+    background: var(--primary-color);
 }
+
+@supports (animation-timeline:scroll()) {
+
+    header:not(.hamburger__menu.active) {
+        animation: hideHeader linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 60px;
+    }
+
+    @keyframes hideHeader {
+        to {
+            transform: translateY(-100%); /* Moves the header up by its full height */
+        }
+    }
+}
+
 
 .navigation {
     display: flex;
@@ -297,7 +318,8 @@ header {
     display: flex;
     gap: 20px;
     width: 100%;
-    min-height: calc(100vh - 60px)
+    min-height: calc(100vh);
+    padding-top: 60px;
 }
 
 .hero__content {
@@ -360,6 +382,7 @@ header {
 .hero__description {
     align-self: end;
     text-align: end;
+    white-space: nowrap;
 }
 
 .decoration {
@@ -419,6 +442,7 @@ header {
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-height: 100dvh;
     height: 100%;
     padding: 60px 0;
     gap: 40px;
@@ -432,21 +456,38 @@ header {
     padding: 0 20px;
 }
 
-.slider-wrapper {
-    flex: 1;
+.slider {
     position: relative;
     width: 100%;
-    height: fit-content;
-    overflow-y: hidden;
+    height: 100%;
+    overflow-x: clip;
 }
 
-.slider {
+.slider-wrapper {
     display: flex;
     height: max-content;
     gap: 20px;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    transition: transform 0.1s ease-out; /* для drag плавности */
+}
+
+.slider__item {
+    flex: 0 0 auto;
+    height: 100%;
+    user-select: none;
+}
+
+.slider__item img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    height: auto;
+    object-position: center;
+    user-select: none;
+    pointer-events: none;
 }
 
 .overlay {
@@ -485,11 +526,6 @@ header {
 }
 
 
-.slider__item {
-    flex: 0 0 auto;
-    height: 100%;
-}
-
 .close {
     position: absolute;
     height: 60px;
@@ -510,14 +546,6 @@ header {
     background-color: var(--secondary-color);
 }
 
-.slider__item img {
-    display: block;
-    max-width: 100%;
-    object-fit: cover;
-    height: auto;
-    width: 100%;
-    object-position: center;
-}
 
 .close__content {
     position: relative;
@@ -629,6 +657,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .pricing-card__button:hover,
@@ -648,7 +677,6 @@ header {
 
 .faq__item {
     flex: 1;
-
 }
 
 .faq-title {
@@ -666,6 +694,7 @@ header {
 
 .accordion__title {
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .accordion__title:hover {
@@ -731,7 +760,7 @@ header {
     display: none;
 }
 
-.accordion.active > .accordion__body {
+.accordion[aria-expanded="true"] > .accordion__body {
     display: block;
 }
 
@@ -804,6 +833,16 @@ input::placeholder {
     color: var(--placeholder-color);
 }
 
+@media (max-width: 1200px) {
+    .pricing-container {
+        flex-wrap: wrap;
+    }
+
+    .pricing-container__item {
+        flex: 0.5 0 40%;
+    }
+}
+
 @media (max-width: 768px) {
     h1.heading {
         font-size: 68px;
@@ -827,19 +866,16 @@ input::placeholder {
         cursor: pointer;
     }
 
-    .hamburger__icon{
+    .hamburger__icon {
         fill: var(--primary-color-light);
     }
 
-    .hamburger:hover .hamburger__menu,
-    .hamburger:focus-within .hamburger__menu,
-    .navigation:focus-within .hamburger__menu,
-    .hamburger__menu:focus {
+    .hamburger__menu.active {
         display: inline-block;
     }
 
     .hamburger__menu {
-        position: absolute;
+        position: fixed;
         display: none;
         top: 60px;
         left: 0;
@@ -896,19 +932,12 @@ input::placeholder {
         display: none;
     }
 
-    .portfolio{
+    .portfolio {
         min-height: fit-content;
     }
 
-    .portfolio-container__header{
+    .portfolio-container__header {
         width: 50%;
-    }
-    .pricing-container {
-        flex-wrap: wrap;
-    }
-
-    .pricing-container__item {
-        flex: 0.5 0 auto;
     }
 
     .faq {
@@ -938,7 +967,7 @@ input::placeholder {
         line-height: 60px;
     }
 
-    .portfolio-container__header{
+    .portfolio-container__header {
         width: 100%;
     }
 
