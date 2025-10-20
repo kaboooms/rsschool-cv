@@ -146,6 +146,9 @@ body {
     -ms-overflow-style: none;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
 
 /* ==========================================================================
    Author's custom styles
@@ -159,8 +162,8 @@ body {
 }
 
 h1.heading {
-    font-size: 116px;
-    line-height: 132px;
+    font-size: clamp(4.25rem, 0.8214rem + 7.1429vw, 7.25rem);
+    line-height: clamp(5rem, 1.2857rem + 7.7381vw, 8.25rem);
     font-weight: lighter;
 }
 
@@ -379,6 +382,7 @@ header {
 .hero__description {
     align-self: end;
     text-align: end;
+    white-space: nowrap;
 }
 
 .decoration {
@@ -438,6 +442,7 @@ header {
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-height: 100dvh;
     height: 100%;
     padding: 60px 0;
     gap: 40px;
@@ -828,6 +833,16 @@ input::placeholder {
     color: var(--placeholder-color);
 }
 
+@media (max-width: 1200px) {
+    .pricing-container {
+        flex-wrap: wrap;
+    }
+
+    .pricing-container__item {
+        flex: 0.5 0 40%;
+    }
+}
+
 @media (max-width: 768px) {
     h1.heading {
         font-size: 68px;
@@ -917,19 +932,12 @@ input::placeholder {
         display: none;
     }
 
-    .portfolio{
+    .portfolio {
         min-height: fit-content;
     }
 
-    .portfolio-container__header{
+    .portfolio-container__header {
         width: 50%;
-    }
-    .pricing-container {
-        flex-wrap: wrap;
-    }
-
-    .pricing-container__item {
-        flex: 0.5 0 auto;
     }
 
     .faq {
@@ -959,7 +967,7 @@ input::placeholder {
         line-height: 60px;
     }
 
-    .portfolio-container__header{
+    .portfolio-container__header {
         width: 100%;
     }
 
